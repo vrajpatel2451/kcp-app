@@ -8,29 +8,32 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(height: 50),
-              const Text(
-                'Hello.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 130,
-                  fontWeight: FontWeight.bold,
+      body: BlocProvider(
+        create: (context) => getIt<SignInFormBloc>(),
+        child: Container(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(height: 50),
+                const Text(
+                  'Hello.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 130,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              const Text(
-                'Log in here',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 130,
-                  fontWeight: FontWeight.bold,
+                const Text(
+                  'Log in here',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 130,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              SignInForm(),
-            ],
+                SignInForm(),
+              ],
+            ),
           ),
         ),
       ),
